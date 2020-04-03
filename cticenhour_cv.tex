@@ -7,39 +7,51 @@
 \usepackage[hidelinks]{hyperref}
 
 \newcommand{\tabitem}{~~\textbullet~~}
-
-\title{\vspace{-2.5em}{\huge \textbf{Casey Icenhour}}\vspace{-3em}}
-\date{} %no date
-\author{} %no author
+\newcommand{\tabitemii}{~~$\circ$~~}
 
 \begin{document}
 
-\maketitle
+\begin{center}
+	{\huge \textbf{Casey Icenhour}}
+\end{center}
 
-\section*{Contact Information}
+\subsection*{Contact Information}
 
 \begin{tabularx}{\textwidth}{r l}
 	\hspace{3em} E-Mail:  & \hspace{2em} cticenho@ncsu.edu \\
 	\hspace{3em} Mobile: & \hspace{2em} 828-612-9256 \\
 	\hspace{3em} GitHub: & \hspace{2em} \url{https://github.com/cticenhour} \\
-	\hspace{3em} LinkedIn: & \hspace{2em} \url{https://linkedin.com/in/caseyicenhour}
 \end{tabularx}
 
-\section*{Research Interests}
+\subsection*{Research Interests}
 
-\hspace{0.07\textwidth} \begin{minipage}[t][2em][s]{0.92\textwidth}
-	Computational Electromagnetics, Industrial Applications of Plasma Physics, Radio-Frequency Plasma, Advanced Manufacturing, Fusion Energy, High-Performance Computing, Science \& Technology Policy
-\end{minipage}
+\begin{tabularx}{\textwidth}{l X}
+	& \hspace{1.5em} Computational Electromagnetics, Industrial Applications of Plasma Physics, Radio-Frequency Plasma, \\
+	& \hspace{1.5em} Advanced Manufacturing, High-Performance Computing, Fusion Energy, Science \& Technology Policy, \\
+	& \hspace{1.5em} Machine Learning, Artificial Intelligence \\
+\end{tabularx}
 
-\section*{Research and Professional Experience}
+\subsection*{Research and Professional Experience}
 
 \begin{tabularx}{\textwidth}{l X r}
 	\hspace{2em} & \textbf{Idaho National Laboratory (INL)}, Idaho Falls, ID & \\
-	& \textit{INL Graduate Fellow, Nuclear Science \& Technology, Computational Frameworks} & \textbf{Jan 2018 - present} \\
-	& \tabitem Member of MOOSE (Multiphysics Object-Oriented Simulation Environment) & \\
-	& \hspace{1.5em} framework development team (see \url{https://mooseframework.inl.gov}) & \\
-	& \tabitem Lead Developer of ELK (Electromagnetic Library for Kinetics \& fluids), & \\
-	& \hspace{1.5em} the electromagnetics solver library for MOOSE. & \\
+	& \textit{Graduate Fellow, Nuclear Science \& Technology, Computational Frameworks} & \textbf{Jan 2018 - present} \\
+	& \tabitem Member of Multiphysics Object-Oriented Simulation Environment (MOOSE) & \\
+	& \hspace{1.5em} finite element framework development team. Responsibilities include & \\
+		& \hspace{1.5em} \tabitemii framework code maintenance and improvements; & \\
+		& \hspace{1.5em} \tabitemii new model development for multiscale, multiphysics, massively-parallel & \\
+		& \hspace{3.4em} applications; & \\
+		& \hspace{1.5em} \tabitemii creation of regression and unit tests; & \\
+		& \hspace{1.5em} \tabitemii support of internal and external users; & \\
+		& \hspace{1.5em} \tabitemii presentation of external seminars and MOOSE workshops; and & \\
+		& \hspace{1.5em} \tabitemii review and approval of externally-submitted framework code improvements & \\
+		& \hspace{3.4em}  using GitHub and the MOOSE continuous integration (CI) system. & \\
+	& \tabitem Lead Developer of fundamental electromagnetic simulation library for & \\
+	& \hspace{1.5em} MOOSE (ELK - Electromagnetics Library for Kinetics \& fluids). & \\
+	& \hspace{1.5em} Responsibilities include & \\
+		& \hspace{1.5em} \tabitemii development and code implementation of physical models; & \\
+		& \hspace{1.5em} \tabitemii selection and creation of benchmarks and validation studies; & \\
+		& \hspace{1.5em} \tabitemii support for ELK code usage and coupling. & \\
 	& \tabitem Awarded INL Laboratory Directed Research \& Development funding (in Advanced & \\
 	& \hspace{1.5em} Design \& Manufacturing) as a Co-Investigator: & \\
 	& \hspace{2.5em} S Pitts (PI), D Gaston, N Jerred, C Icenhour, L Aagesen, D Schwen, ``Coupling & \\
@@ -48,9 +60,9 @@
 	& & \\
 	& \textbf{Oak Ridge National Laboratory (ORNL)}, Oak Ridge, TN & \\
 	& \textit{Graduate Student Intern, Fusion and Materials for Nuclear Systems Division} & \textbf{Jul 2016 - Dec 2017} \\
-	& \tabitem Developed EELS, a MOOSE framework application for simple vacuum & \\
-	& \hspace{1.5em} radio-frequency electromagnetic simulation in support of ion cyclotron & \\
-	& \hspace{1.5em} resonance heating (ICRH) fusion plasma research & \\
+	& \tabitem Developed EELS, a MOOSE application for simple radio-frequency electromagnetic & \\
+	& \hspace{1.5em} simulation in support of ion cyclotron resonance heating (ICRH) fusion energy & \\
+	& \hspace{1.5em} research & \\
 	& & \\
 	& \textbf{North Carolina State University, Nuclear Engineering Dept.}, Raleigh, NC & \\
 	& \textit{Graduate Research Assistant, 4th State Applications Research Group} & \textbf{Jul 2013 - Jun 2016} \\
@@ -60,22 +72,28 @@
 	& \hspace{1.5em} interrogation using MATLAB & \\
 \end{tabularx}
 
-\section*{Education}
+\subsection*{Education}
 
 	\begin{tabularx}{\textwidth}{l X r}
-	PhD 		 & \textbf{North Carolina State University (NCSU)}, Nuclear Engineering &  \textbf{2012 - Fall 2020 (expected)} \\
+	PhD 	 & \textbf{North Carolina State University (NCSU)}, Nuclear Engineering & \textbf{2012 - Fall 2020 (expected)} \\
 				 & \tabitem Concentration in Plasma Physics and Nuclear Fusion & \\
 				 & \tabitem Dissertation Title: \textit{Development and Validation of Open Source Software} & \\
 				 & \hspace{1.5em} \textit{for Electromagnetics Simulation and Multiphysics Coupling} & \\
 				 & \tabitem Advisor: Dr. Steven C. Shannon & \\
-	BS			 & \textbf{Western Carolina University (WCU)}, Electrical Engineering  & \textbf{2008 - 2012} \\
+	\end{tabularx}
+
+	% new page (as of 4/2/2020 edits)
+
+	% noindent fixes overfull hbox warning when using tabularx as the first line of this page
+	\noindent\begin{tabularx}{\textwidth}{l X r}
+	BS		 & \textbf{Western Carolina University (WCU)}, Electrical Engineering & \textbf{2008 - 2012} \\
 				 & \tabitem GPA: 4.0 & \\
 				 & \tabitem Honors College & \\
 				 & \tabitem Concentration in Optics and Communications & \\
-				 & \tabitem Minors: Mathematics, Physics &
+				 & \tabitem Minors: Mathematics, Physics & \\
 	\end{tabularx}
 
-\section*{Honors and Awards}
+\subsection*{Honors and Awards}
 
 	\begin{tabularx}{\textwidth}{l X r}
 		\hspace{2em} & Idaho National Laboratory Graduate Fellowship & \textbf{2018 - 2020} \\
@@ -85,7 +103,7 @@
 					 & Most Outstanding Upperclassman, WCU Electrical Engineering & \textbf{2011}
 	\end{tabularx}
 
-\section*{Professional Society Affiliations and Memberships}
+\subsection*{Professional Society Affiliations and Memberships}
 
 \begin{tabularx}{\textwidth}{l l}
 	\hspace{2em} & American Physical Society (APS) \\
@@ -93,7 +111,7 @@
 				 & Society for Industrial and Applied Mathematics (SIAM)
 \end{tabularx}
 
-\section*{Scientific Computing Skills}
+\subsection*{Scientific Computing Skills}
 
 	\begin{tabularx}{\textwidth}{l X r}
 		\hspace {2em} & \textbf{Languages} & C++, bash, Python \\
@@ -107,14 +125,14 @@
 					  & \textbf{Other Tools} & \LaTeX
 	\end{tabularx}
 
-\section*{Invited Workshops}
+\subsection*{Invited Workshops}
 
 	\begin{tabularx}{\textwidth}{l l X}
 		\hspace{2em}
 			& (1)  & \textbf{C. Icenhour}, S. Keniley, C. DeChant, C. Permann, A. Lindsay, R. Martineau, D. Curreli, S. Shannon, ``Multi-Physics Object Oriented Simulation Environment (MOOSE)", Invited workshop, APS Gaseous Electronics Conference 2018, \url{http://meetings.aps.org/link/BAPS.2018.GEC.AS2.1}
 	\end{tabularx}
 
-\section*{Presentations and Conference Proceedings}
+\subsection*{Presentations and Conference Proceedings}
 
 	\begin{tabularx}{\textwidth}{l l X}
 		\hspace{2em}
