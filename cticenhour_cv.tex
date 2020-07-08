@@ -4,7 +4,11 @@
 
 \usepackage[margin=0.5in]{geometry}
 \usepackage{tabularx}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,        % false: boxed links; true: colored links
+    urlcolor=black          % color of external links
+}
 
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
@@ -27,8 +31,7 @@
 
 \begin{tabularx}{\textwidth}{l X}
 	& \hspace{1.5em} Computational Electromagnetics, Industrial Applications of Plasma Physics, Radio-Frequency Plasma, \\
-	& \hspace{1.5em} Advanced Manufacturing, High-Performance Computing, Fusion Energy, Science \& Technology Policy, \\
-	& \hspace{1.5em} Machine Learning, Artificial Intelligence \\
+	& \hspace{1.5em} Advanced Manufacturing, High-Performance Computing, Fusion Energy, Science \& Technology Policy \\
 \end{tabularx}
 
 \subsection*{Research and Professional Experience}
@@ -129,19 +132,19 @@
 
 	\begin{tabularx}{\textwidth}{l l X}
 		\hspace{2em}
-			& (1)  & \textbf{C. Icenhour}, S. Keniley, C. DeChant, C. Permann, A. Lindsay, R. Martineau, D. Curreli, S. Shannon, ``Multi-Physics Object Oriented Simulation Environment (MOOSE)", Invited workshop, APS Gaseous Electronics Conference 2018, \url{http://meetings.aps.org/link/BAPS.2018.GEC.AS2.1}
+			& (1)  & \textbf{C. Icenhour}, S. Keniley, C. DeChant, C. Permann, A. Lindsay, R. Martineau, D. Curreli, S. Shannon, ``Multi-Physics Object Oriented Simulation Environment (MOOSE)", Invited workshop, APS Gaseous Electronics Conference 2018, \href{http://meetings.aps.org/link/BAPS.2018.GEC.AS2.1}{\texttt{GEC18-AS2.1}}
 	\end{tabularx}
 
 \subsection*{Presentations and Conference Proceedings}
 
 	\begin{tabularx}{\textwidth}{l l X}
 		\hspace{2em}
-			& (1)  & \textbf{C. Icenhour}, C. DeChant, A. Lindsay, R. Martineau, D. Green, S. Shannon, ``Validation Studies using ELK and the Open Source MOOSE Framework Application Zapdos for Electromagnetic Coupled Plasma Simulation", APS Gaseous Electronics Conference 2019, \url{http://meetings.aps.org/Meeting/GEC19/Session/RR1.6} \\
-			& (2)  & \textbf{C. Icenhour}, A. Lindsay, R. Martineau, S. Shannon, ``Electromagnetics Simulations with Vector-Valued Finite Elements in MOOSE", 2019 SIAM Conference on Computational Science and Engineering, \url{http://meetings.siam.org/sess/dsp_talk.cfm?p=96892} \\
-			& (3)  & \textbf{C. Icenhour}, A. Lindsay, D. Green, R. Martineau, S. Shannon, ``Elk: A New MOOSE Framework Application for Radio-Frequency Electromagnetics", APS Gaseous Electronics Conference 2018, \url{http://meetings.aps.org/link/BAPS.2018.GEC.ET1.2} \\
-			& (4)  &  S. Shannon, A. Lindsay, D. Graves, \textbf{C. Icenhour}, D. Peterson, S. White, ``Plasma Simulation in the Multiphysics Object Oriented Simulation Environment MOOSE", APS Gaseous Electronics Conference 2016, \newline \url{http://meetings.aps.org/link/BAPS.2016.GEC.QR2.2} \\
-			& (5)  & \textbf{C. Icenhour}, A. Exum, E. Martin, D. Green, D. Smithe, S. Shannon, ``PIC Simulation of RF Plasma Sheath Formation and Initial Validation of Optical Diagnostics using HPC Resources", Poster, APS Division of Plasma Physics Meeting 2014, \url{http://meetings.aps.org/link/BAPS.2014.DPP.NP8.88} \\
-			& (6)  & \textbf{C. Icenhour}, T. Kummerer, D. Green, D. Smithe, S. Shannon, ``Validation of RF CCP Discharge Model Against Experimental Data using PIC Method", Poster, APS Gaseous Electronics Conference 2014, \newline \url{http://meetings.aps.org/link/BAPS.2014.GEC.GT1.67}
+			& (1)  & \textbf{C. Icenhour}, C. DeChant, A. Lindsay, R. Martineau, D. Green, S. Shannon, ``Validation Studies using ELK and the Open Source MOOSE Framework Application Zapdos for Electromagnetic Coupled Plasma Simulation", APS Gaseous Electronics Conference 2019, \href{http://meetings.aps.org/Meeting/GEC19/Session/RR1.6}{\texttt{GEC19-RR1.6}} \\
+			& (2)  & \textbf{C. Icenhour}, A. Lindsay, R. Martineau, S. Shannon, ``Electromagnetics Simulations with Vector-Valued Finite Elements in MOOSE", 2019 SIAM Conference on Computational Science and Engineering, \href{http://meetings.siam.org/sess/dsp_talk.cfm?p=96892}{\texttt{CSE19-MS124.4}} \\
+			& (3)  & \textbf{C. Icenhour}, A. Lindsay, D. Green, R. Martineau, S. Shannon, ``Elk: A New MOOSE Framework Application for Radio-Frequency Electromagnetics", APS Gaseous Electronics Conference 2018, \href{http://meetings.aps.org/link/BAPS.2018.GEC.ET1.2}{\texttt{GEC18-ET1.2}} \\
+			& (4)  &  S. Shannon, A. Lindsay, D. Graves, \textbf{C. Icenhour}, D. Peterson, S. White, ``Plasma Simulation in the Multiphysics Object Oriented Simulation Environment MOOSE", APS Gaseous Electronics Conference 2016, \href{http://meetings.aps.org/link/BAPS.2016.GEC.QR2.2}{\texttt{GEC16-QR2.2}} \\
+			& (5)  & \textbf{C. Icenhour}, A. Exum, E. Martin, D. Green, D. Smithe, S. Shannon, ``PIC Simulation of RF Plasma Sheath Formation and Initial Validation of Optical Diagnostics using HPC Resources", Poster, APS Division of Plasma Physics Meeting 2014, \href{http://meetings.aps.org/link/BAPS.2014.DPP.NP8.88}{\texttt{DPP14-NP8.88}} \\
+			& (6)  & \textbf{C. Icenhour}, T. Kummerer, D. Green, D. Smithe, S. Shannon, ``Validation of RF CCP Discharge Model Against Experimental Data using PIC Method", Poster, APS Gaseous Electronics Conference 2014, \href{http://meetings.aps.org/link/BAPS.2014.GEC.GT1.67}{\texttt{GEC14-GT1.67}}
 	\end{tabularx}
 
 \end{document}
