@@ -9,6 +9,12 @@
     colorlinks=true,        % false: boxed links; true: colored links
     urlcolor=black          % color of external links
 }
+\usepackage[
+	style=numeric,
+	sorting=ydnt,			% sort by year first (then name, then title) in descending order
+	maxnames=37,			% Max number of names displayed (MOOSE 2.0 paper --> 37 authors)
+	giveninits=true			% Show only first letter of given name
+]{biblatex}
 
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
@@ -113,46 +119,37 @@
 
 \subsection*{Journal Articles}
 
-  \begin{tabularx}{\textwidth}{l l X}
-    \hspace{2em}
-      & (1) &  C. DeChant, \textbf{C. Icenhour}, S. Keniley, G. Gall, A. Lindsay, D. Curelli, S. Shannon, ``Verification and Validation of the Open-Source Plasma Fluid Code: Zapdos" \textit{Computer Physics Communications}, 2022, In review.\\
-	  & (2) &  A. Lindsay, D. Gaston, C. Permann, J. Miller, D. Andr\v{s}, A. Slaughter, F. Kong, J. Hansel, R. Carlsen, \textbf{C. Icenhour}, L. Harbour, G. Giudicelli, R. Stogner, P. German, J. Badger, S. Biswas, L. Chapuis, J. Hales, W. Jiang, Z. Prince, S. Schunert, D. Schwen, B. Spencer, A. Recuero, D. Yushu, Y. Wang, C. Wong, T. Hu, A. Novak, Y. Sang Jung, Y. Miao, C. Mathews, A. Rovinelli, J. Peterson, A. Wilkins, C. Green, S. Veeraraghavan, ``2.0 - MOOSE: Enabling massively parallel multiphysics simulation,'' \textit{SoftwareX}, 2022, Accepted for publication. \\
-  \end{tabularx}
+	\begin{refsection}[bib/articles.bib]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
 
 \subsection*{Technical Reports}
 
-  \begin{tabularx}{\textwidth}{l l X}
-    \hspace{2em}
-      & (1) & A. Lindsay, L. Harbour, G. Giudicelli, \textbf{C. Icenhour}, F. Kong, R. Stogner, B. Langley, M. Delchini, R. Lefebvre, D. Gaston, C. Permann. ``User-oriented Improvements in the MOOSE framework in support of Multiphysics Simulation." Idaho National Laboratory, Idaho Falls, ID, USA, Tech. Rep. INL/RPT-22-67396, May 2022. \\
-  \end{tabularx}
+	\begin{refsection}[bib/tech_reports.bib]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
 
 \subsection*{Software}
 
-  \begin{tabularx}{\textwidth}{l l X}
-	\hspace{2em}
-	  & (1) & A. Lindsay, W. Jiang, S. Pitts, L. Aagesen, \textbf{C. Icenhour}, ``Moose Application Library For Advanced Manufacturing Utilities (MALAMUTE)." Computer software. Vers. 00. USDOE Office of Nuclear Energy (NE). 8 Jul. 2021. \url{https://www.osti.gov/biblio/1880788}.
-  \end{tabularx}
+	\begin{refsection}[bib/software.bib]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
 
 \subsection*{Invited Workshops}
 
-	\begin{tabularx}{\textwidth}{l l X}
-		\hspace{2em}
-			& (1)  & \textbf{C. Icenhour}, S. Keniley, C. DeChant, C. Permann, A. Lindsay, R. Martineau, D. Curreli, S. Shannon, ``Multi-Physics Object Oriented Simulation Environment (MOOSE)", Invited workshop, APS Gaseous Electronics Conference 2018, \href{http://meetings.aps.org/link/BAPS.2018.GEC.AS2.1}{\texttt{GEC18-AS2.1}}
-	\end{tabularx}
+	\begin{refsection}[bib/invited.bib]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
 
 \subsection*{Presentations and Conference Proceedings}
 
-	\begin{tabularx}{\textwidth}{l l X}
-		\hspace{2em}
-			& (1)  & \textbf{C. Icenhour}, S. Pitts, A. Lindsay, ``Electromagnetics and Advanced Manufacturing Simulation Development within the MOOSE Ecosystem'', Poster, 3rd Computational Physics School for Fusion Research, 2022. \url{https://www.osti.gov/biblio/1882589} \\
-            & (2)  & \textbf{C. Icenhour}, C. DeChant, A. Lindsay, D. Green, S. Shannon, ``Continued Validation Studies using the MOOSE Framework for Plasma Simulation with Electromagnetics", APS Gaseous Electronics Conference 2020, \href{https://meetings.aps.org/Meeting/GEC20/Session/QW2.4}{\texttt{GEC20-QW2.4}} \\
-            & (3)  & C. DeChant, Y. Xiao, \textbf{C. Icenhour}, S. Keniley, A. Lindsay, D. Curreli, S. Shannon, ``Validations for Improvements of the Open Source Plasma Code, Zapdos", APS Gaseous Electronics Conference 2020, \href{https://meetings.aps.org/Meeting/GEC20/Session/QW2.3}{\texttt{GEC20-QW2.3}} \\
-			& (4)  & \textbf{C. Icenhour}, C. DeChant, A. Lindsay, R. Martineau, D. Green, S. Shannon, ``Validation Studies using ELK and the Open Source MOOSE Framework Application Zapdos for Electromagnetic Coupled Plasma Simulation", APS Gaseous Electronics Conference 2019, \href{http://meetings.aps.org/Meeting/GEC19/Session/RR1.6}{\texttt{GEC19-RR1.6}} \\
-			& (5)  & \textbf{C. Icenhour}, A. Lindsay, R. Martineau, S. Shannon, ``Electromagnetics Simulations with Vector-Valued Finite Elements in MOOSE", 2019 SIAM Conference on Computational Science and Engineering, \href{http://meetings.siam.org/sess/dsp_talk.cfm?p=96892}{\texttt{CSE19-MS124.4}} \\
-			& (6)  & \textbf{C. Icenhour}, A. Lindsay, D. Green, R. Martineau, S. Shannon, ``Elk: A New MOOSE Framework Application for Radio-Frequency Electromagnetics", APS Gaseous Electronics Conference 2018, \href{http://meetings.aps.org/link/BAPS.2018.GEC.ET1.2}{\texttt{GEC18-ET1.2}} \\
-			& (7)  &  S. Shannon, A. Lindsay, D. Graves, \textbf{C. Icenhour}, D. Peterson, S. White, ``Plasma Simulation in the Multiphysics Object Oriented Simulation Environment MOOSE", APS Gaseous Electronics Conference 2016, \href{http://meetings.aps.org/link/BAPS.2016.GEC.QR2.2}{\texttt{GEC16-QR2.2}} \\
-			& (8)  & \textbf{C. Icenhour}, A. Exum, E. Martin, D. Green, D. Smithe, S. Shannon, ``PIC Simulation of RF Plasma Sheath Formation and Initial Validation of Optical Diagnostics using HPC Resources", Poster, APS Division of Plasma Physics Meeting 2014, \href{http://meetings.aps.org/link/BAPS.2014.DPP.NP8.88}{\texttt{DPP14-NP8.88}} \\
-			& (9)  & \textbf{C. Icenhour}, T. Kummerer, D. Green, D. Smithe, S. Shannon, ``Validation of RF CCP Discharge Model Against Experimental Data using PIC Method", Poster, APS Gaseous Electronics Conference 2014, \href{http://meetings.aps.org/link/BAPS.2014.GEC.GT1.67}{\texttt{GEC14-GT1.67}}
-	\end{tabularx}
+	\begin{refsection}[bib/conferences.bib]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
 
 \end{document}
