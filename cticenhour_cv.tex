@@ -9,9 +9,47 @@
     colorlinks=true,        % false: boxed links; true: colored links
     urlcolor=black          % color of external links
 }
+\usepackage[
+	style=numeric,
+	sorting=ydnt,			% sort by year first (then name, then title) in descending order
+	maxnames=37,			% Max number of names displayed (MOOSE 2.0 paper --> 37 authors)
+	giveninits=true			% Show only first letter of given name
+]{biblatex}
 
+%% MACROS 
+% Bullet points
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
+
+% Common section infrastructure
+\newcommand{\cvsection}[3]{
+	\subsection*{#1}
+	\begin{tabularx}{\textwidth}{#2}
+		#3
+	\end{tabularx}
+}
+
+% Command to display reference list, given a bib file. 
+\newcommand{\reflist}[2]{
+	\subsection*{#1}
+	\begin{refsection}[#2]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
+}
+
+% Use Biblatex data annotation feature to bold name in each reference list entry
+% See https://tex.stackexchange.com/a/304968
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+%% END MACROS
 
 \begin{document}
 
@@ -19,140 +57,92 @@
 	{\huge \textbf{Casey Icenhour}}
 \end{center}
 
-\subsection*{Contact Information}
-
-\begin{tabularx}{\textwidth}{r l}
+\cvsection{Contact Information}{r l}{
 	\hspace{3em} E-Mail:  & \hspace{2em} cticenho@ncsu.edu \\
 	\hspace{3em} Mobile: & \hspace{2em} 828-612-9256 \\
 	\hspace{3em} GitHub: & \hspace{2em} \url{https://github.com/cticenhour} \\
-\end{tabularx}
+}
 
-\subsection*{Research Interests}
-
-\begin{tabularx}{\textwidth}{l X}
+\cvsection{Research Interests}{l X}{
 	& \hspace{1.5em} Computational Electromagnetics, Industrial Applications of Plasma Physics, Radio-Frequency Plasma, \\
 	& \hspace{1.5em} Advanced Manufacturing, High-Performance Computing, Fusion Energy, Science \& Technology Policy \\
-\end{tabularx}
+}
 
-\subsection*{Research and Professional Experience}
-
-\begin{tabularx}{\textwidth}{l X r}
+\cvsection{Research and Professional Experience}{l X r}{
 	\hspace{2em} & \textbf{Idaho National Laboratory (INL)}, Idaho Falls, ID & \\
-	& \textit{Graduate Fellow, Nuclear Science \& Technology, Advanced Scientific Computing, Computational Frameworks} & \textbf{Jan 2018 - present} \\
-	& \tabitem Member of Multiphysics Object-Oriented Simulation Environment (MOOSE) & \\
-	& \hspace{1.5em} finite element framework development team and Change Control Board & \\
-  & \tabitem MOOSE MacOS platform lead and co-maintainer of conda-based MOOSE & \\
-    & \hspace{1.5em} dependency packages & \\
-	& \tabitem Creator and lead developer of the MOOSE Electromagnetics Module & \\
-	& \tabitem Co-creator and lead of INL advanced manufacturing code MALAMUTE & \\
-	& \tabitem Awarded INL Laboratory Directed Research \& Development funding (in Advanced & \\
-	& \hspace{1.5em} Design \& Manufacturing) as a Co-Investigator: & \\
-	& \hspace{2.5em} S Pitts (PI), D Gaston, N Jerred, C Icenhour, L Aagesen, D Schwen, \textit{Coupling} & \\
-	& \hspace{2.5em} \textit{of Spark Plasma Sintering with Advanced Modeling to Enable Process} & \\
-	& \hspace{2.5em} \textit{Scale-Up}, FY2019 - FY2021 & \\
+			& \textit{Graduate Fellow, Nuclear Science \& Technology, Advanced Scientific Computing, Computational Frameworks} & \textbf{Jan 2018 - present} \\
+			& \tabitem Member of Multiphysics Object-Oriented Simulation Environment (MOOSE) & \\
+			& \hspace{1.5em} finite element framework development team and Change Control Board & \\
+			& \tabitem MOOSE MacOS platform lead and co-maintainer of conda-based MOOSE & \\
+    		& \hspace{1.5em} dependency packages & \\
+			& \tabitem Creator and lead developer of the MOOSE Electromagnetics Module & \\
+			& \tabitem Co-creator and lead of INL advanced manufacturing code MALAMUTE & \\
+			& \tabitem Awarded INL Laboratory Directed Research \& Development funding (in Advanced & \\
+			& \hspace{1.5em} Design \& Manufacturing) as a Co-Investigator: & \\
+			& \hspace{2.5em} S Pitts (PI), D Gaston, N Jerred, C Icenhour, L Aagesen, D Schwen, \textit{Coupling} & \\
+			& \hspace{2.5em} \textit{of Spark Plasma Sintering with Advanced Modeling to Enable Process} & \\
+			& \hspace{2.5em} \textit{Scale-Up}, FY2019 - FY2021 & \\
 	& & \\
 	& \textbf{Oak Ridge National Laboratory (ORNL)}, Oak Ridge, TN & \\
-	& \textit{Graduate Student Intern, Fusion and Materials for Nuclear Systems Division} & \textbf{Jul 2016 - Dec 2017} \\
-	& \tabitem Developed code for simple radio-frequency electromagnetic simulation in support of & \\
-	& \hspace{1.5em} ion cyclotron resonance heating (ICRH) fusion energy research & \\
+			& \textit{Graduate Student Intern, Fusion and Materials for Nuclear Systems Division} & \textbf{Jul 2016 - Dec 2017} \\
+			& \tabitem Developed code for simple radio-frequency electromagnetic simulation in support of & \\
+			& \hspace{1.5em} ion cyclotron resonance heating (ICRH) fusion energy research & \\
 	& & \\
 	& \textbf{North Carolina State University (NCSU), Nuclear Engineering Dept.}, Raleigh, NC & \\
-	& \textit{Graduate Research Assistant, 4th State Applications Research Group} & \textbf{Jul 2013 - Jun 2016} \\
-	& \tabitem Utilized particle-in-cell codes to study capacitively-coupled RF plasma discharges & \\
-	& \textit{Dean's Doctoral Fellow, NCSU College of Engineering} & \textbf{Aug 2012 - Jun 2013} \\
-	& \tabitem Modeled proof-of-concept Z-pinch plasma neutron source for concrete structural & \\
-	& \hspace{1.5em} interrogation using MATLAB & \\
-\end{tabularx}
+			& \textit{Graduate Research Assistant, 4th State Applications Research Group} & \textbf{Jul 2013 - Jun 2016} \\
+			& \tabitem Utilized particle-in-cell codes to study capacitively-coupled RF plasma discharges & \\
+			& \textit{Dean's Doctoral Fellow, NCSU College of Engineering} & \textbf{Aug 2012 - Jun 2013} \\
+			& \tabitem Modeled proof-of-concept Z-pinch plasma neutron source for concrete structural & \\
+			& \hspace{1.5em} interrogation using MATLAB & \\
+}
 
-\subsection*{Education}
+\cvsection{Education}{l X r}{
+	PhD 	& \textbf{North Carolina State University (NCSU)}, Nuclear Engineering & \textbf{2023} \\
+				& \tabitem Concentration in Plasma Physics and Nuclear Fusion & \\
+				& \tabitem Dissertation Title: \textit{Development and Validation of Open Source Software} & \\
+				& \hspace{1.5em} \textit{for Electromagnetics Simulation and Multiphysics Coupling} & \\
+				& \tabitem Advisor: Dr. Steven C. Shannon & \\
+         	& & \\
+	BS		& \textbf{Western Carolina University (WCU)}, Electrical Engineering & \textbf{2012} \\
+				& \tabitem GPA: 4.0 & \\
+				& \tabitem Honors College & \\
+				& \tabitem Concentration in Optics and Communications & \\
+				& \tabitem Minors: Mathematics, Physics & \\
+}
 
-	\begin{tabularx}{\textwidth}{l X r}
-	PhD 	 & \textbf{North Carolina State University (NCSU)}, Nuclear Engineering & \textbf{2012 - 2022} \\
-				 & \tabitem Concentration in Plasma Physics and Nuclear Fusion & \\
-				 & \tabitem Dissertation Title: \textit{Development and Validation of Open Source Software} & \\
-				 & \hspace{1.5em} \textit{for Electromagnetics Simulation and Multiphysics Coupling} & \\
-				 & \tabitem Advisor: Dr. Steven C. Shannon & \\
-         & & \\
-	BS		 & \textbf{Western Carolina University (WCU)}, Electrical Engineering & \textbf{2008 - 2012} \\
-				 & \tabitem GPA: 4.0 & \\
-				 & \tabitem Honors College & \\
-				 & \tabitem Concentration in Optics and Communications & \\
-				 & \tabitem Minors: Mathematics, Physics & \\
-	\end{tabularx}
+\cvsection{Honors and Awards}{l X r}{
+	\hspace{2em} & INL Graduate Fellowship & \textbf{2018 - present} \\
+				 & DOE Office of Science Graduate Student Research Program, ORNL & \textbf{2016 - 2017} \\
+				 & NCSU College of Engineering Dean's Doctoral Fellowship & \textbf{2012 - 2013} \\
+				 & T. Ray and Frances Louise Gibbs Endowed Scholarship, WCU & \textbf{2008 - 2012} \\
+				 & Most Outstanding Upperclassman, WCU Electrical Engineering & \textbf{2011}
+}
 
-\subsection*{Honors and Awards}
-
-	\begin{tabularx}{\textwidth}{l X r}
-		\hspace{2em} & INL Graduate Fellowship & \textbf{2018 - present} \\
-					       & DOE Office of Science Graduate Student Research Program, ORNL & \textbf{2016 - 2017} \\
-					       & NCSU College of Engineering Dean's Doctoral Fellowship & \textbf{2012 - 2013} \\
-					       & T. Ray and Frances Louise Gibbs Endowed Scholarship, WCU & \textbf{2008 - 2012} \\
-					       & Most Outstanding Upperclassman, WCU Electrical Engineering & \textbf{2011}
-	\end{tabularx}
-
-\subsection*{Professional Society Affiliations and Memberships}
-
-\begin{tabularx}{\textwidth}{l l}
+\cvsection{Professional Society Affiliations and Memberships}{l l}{
 	\hspace{2em} & American Physical Society (APS) \\
 				 & Institute for Electrical and Electronics Engineers (IEEE) \\
 				 & Society for Industrial and Applied Mathematics (SIAM)
-\end{tabularx}
+}
 
-\subsection*{Scientific Computing Skills}
+\cvsection{Scientific Computing Skills}{l X r}{
+	\hspace{2em} & \textbf{Languages} & C++, Python \\
+				 & \textbf{Operating Systems} & Windows, MacOS, Linux (Rocky) \\
+				 & \textbf{Mathematical Computing Environments} & MATLAB, Octave \\
+				 & \textbf{Multiphysics Codes} & MOOSE \\
+				 & \textbf{Version Control} & git \\
+				 & \textbf{Data Visualization} & Paraview, Matplotlib \\
+				 & \textbf{Mesh Generation Tools} & Gmsh \\
+				 & \textbf{Other Tools} & \LaTeX, Markdown \\
+}
 
-	\begin{tabularx}{\textwidth}{l X r}
-		\hspace {2em} & \textbf{Languages} & C++, Python \\
-					        & \textbf{Operating Systems} & Windows, MacOS, Linux (Rocky) \\
-					        & \textbf{Mathematical Computing Environments} & MATLAB, Octave \\
-					        & \textbf{Multiphysics Codes} & MOOSE \\
-					        & \textbf{Version Control} & git \\
-					        & \textbf{Data Visualization} & Paraview, Matplotlib \\
-					        & \textbf{Mesh Generation Tools} & Gmsh \\
-					        & \textbf{Other Tools} & \LaTeX, Markdown \\
-	\end{tabularx}
+\reflist{Journal Articles}{bib/articles.bib}
 
-\subsection*{Journal Articles}
+\reflist{Technical Reports}{bib/tech_reports.bib}
 
-  \begin{tabularx}{\textwidth}{l l X}
-    \hspace{2em}
-      & (1) &  C. DeChant, \textbf{C. Icenhour}, S. Keniley, G. Gall, A. Lindsay, D. Curelli, S. Shannon, ``Verification and Validation of the Open-Source Plasma Fluid Code: Zapdos" \textit{Computer Physics Communications}, 2022, In review.\\
-	  & (2) &  A. Lindsay, D. Gaston, C. Permann, J. Miller, D. Andr\v{s}, A. Slaughter, F. Kong, J. Hansel, R. Carlsen, \textbf{C. Icenhour}, L. Harbour, G. Giudicelli, R. Stogner, P. German, J. Badger, S. Biswas, L. Chapuis, J. Hales, W. Jiang, Z. Prince, S. Schunert, D. Schwen, B. Spencer, A. Recuero, D. Yushu, Y. Wang, C. Wong, T. Hu, A. Novak, Y. Sang Jung, Y. Miao, C. Mathews, A. Rovinelli, J. Peterson, A. Wilkins, C. Green, S. Veeraraghavan, ``2.0 - MOOSE: Enabling massively parallel multiphysics simulation,'' \textit{SoftwareX}, 2022, Accepted for publication. \\
-  \end{tabularx}
+\reflist{Software}{bib/software.bib}
 
-\subsection*{Technical Reports}
+\reflist{Invited Workshops}{bib/invited.bib}
 
-  \begin{tabularx}{\textwidth}{l l X}
-    \hspace{2em}
-      & (1) & A. Lindsay, L. Harbour, G. Giudicelli, \textbf{C. Icenhour}, F. Kong, R. Stogner, B. Langley, M. Delchini, R. Lefebvre, D. Gaston, C. Permann. ``User-oriented Improvements in the MOOSE framework in support of Multiphysics Simulation." Idaho National Laboratory, Idaho Falls, ID, USA, Tech. Rep. INL/RPT-22-67396, May 2022. \\
-  \end{tabularx}
-
-\subsection*{Software}
-
-  \begin{tabularx}{\textwidth}{l l X}
-	\hspace{2em}
-	  & (1) & A. Lindsay, W. Jiang, S. Pitts, L. Aagesen, \textbf{C. Icenhour}, ``Moose Application Library For Advanced Manufacturing Utilities (MALAMUTE)." Computer software. Vers. 00. USDOE Office of Nuclear Energy (NE). 8 Jul. 2021. \url{https://www.osti.gov/biblio/1880788}.
-  \end{tabularx}
-
-\subsection*{Invited Workshops}
-
-	\begin{tabularx}{\textwidth}{l l X}
-		\hspace{2em}
-			& (1)  & \textbf{C. Icenhour}, S. Keniley, C. DeChant, C. Permann, A. Lindsay, R. Martineau, D. Curreli, S. Shannon, ``Multi-Physics Object Oriented Simulation Environment (MOOSE)", Invited workshop, APS Gaseous Electronics Conference 2018, \href{http://meetings.aps.org/link/BAPS.2018.GEC.AS2.1}{\texttt{GEC18-AS2.1}}
-	\end{tabularx}
-
-\subsection*{Presentations and Conference Proceedings}
-
-	\begin{tabularx}{\textwidth}{l l X}
-		\hspace{2em}
-			& (1)  & \textbf{C. Icenhour}, S. Pitts, A. Lindsay, ``Electromagnetics and Advanced Manufacturing Simulation Development within the MOOSE Ecosystem'', Poster, 3rd Computational Physics School for Fusion Research, 2022. \url{https://www.osti.gov/biblio/1882589} \\
-            & (2)  & \textbf{C. Icenhour}, C. DeChant, A. Lindsay, D. Green, S. Shannon, ``Continued Validation Studies using the MOOSE Framework for Plasma Simulation with Electromagnetics", APS Gaseous Electronics Conference 2020, \href{https://meetings.aps.org/Meeting/GEC20/Session/QW2.4}{\texttt{GEC20-QW2.4}} \\
-            & (3)  & C. DeChant, Y. Xiao, \textbf{C. Icenhour}, S. Keniley, A. Lindsay, D. Curreli, S. Shannon, ``Validations for Improvements of the Open Source Plasma Code, Zapdos", APS Gaseous Electronics Conference 2020, \href{https://meetings.aps.org/Meeting/GEC20/Session/QW2.3}{\texttt{GEC20-QW2.3}} \\
-			& (4)  & \textbf{C. Icenhour}, C. DeChant, A. Lindsay, R. Martineau, D. Green, S. Shannon, ``Validation Studies using ELK and the Open Source MOOSE Framework Application Zapdos for Electromagnetic Coupled Plasma Simulation", APS Gaseous Electronics Conference 2019, \href{http://meetings.aps.org/Meeting/GEC19/Session/RR1.6}{\texttt{GEC19-RR1.6}} \\
-			& (5)  & \textbf{C. Icenhour}, A. Lindsay, R. Martineau, S. Shannon, ``Electromagnetics Simulations with Vector-Valued Finite Elements in MOOSE", 2019 SIAM Conference on Computational Science and Engineering, \href{http://meetings.siam.org/sess/dsp_talk.cfm?p=96892}{\texttt{CSE19-MS124.4}} \\
-			& (6)  & \textbf{C. Icenhour}, A. Lindsay, D. Green, R. Martineau, S. Shannon, ``Elk: A New MOOSE Framework Application for Radio-Frequency Electromagnetics", APS Gaseous Electronics Conference 2018, \href{http://meetings.aps.org/link/BAPS.2018.GEC.ET1.2}{\texttt{GEC18-ET1.2}} \\
-			& (7)  &  S. Shannon, A. Lindsay, D. Graves, \textbf{C. Icenhour}, D. Peterson, S. White, ``Plasma Simulation in the Multiphysics Object Oriented Simulation Environment MOOSE", APS Gaseous Electronics Conference 2016, \href{http://meetings.aps.org/link/BAPS.2016.GEC.QR2.2}{\texttt{GEC16-QR2.2}} \\
-			& (8)  & \textbf{C. Icenhour}, A. Exum, E. Martin, D. Green, D. Smithe, S. Shannon, ``PIC Simulation of RF Plasma Sheath Formation and Initial Validation of Optical Diagnostics using HPC Resources", Poster, APS Division of Plasma Physics Meeting 2014, \href{http://meetings.aps.org/link/BAPS.2014.DPP.NP8.88}{\texttt{DPP14-NP8.88}} \\
-			& (9)  & \textbf{C. Icenhour}, T. Kummerer, D. Green, D. Smithe, S. Shannon, ``Validation of RF CCP Discharge Model Against Experimental Data using PIC Method", Poster, APS Gaseous Electronics Conference 2014, \href{http://meetings.aps.org/link/BAPS.2014.GEC.GT1.67}{\texttt{GEC14-GT1.67}}
-	\end{tabularx}
+\reflist{Presentations and Conference Proceedings}{bib/conferences.bib}
 
 \end{document}
