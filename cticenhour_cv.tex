@@ -20,8 +20,10 @@
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
 % Command to display reference list, given a bib file. 
-\newcommand{\reflist}[1]{
-	\begin{refsection}[#1]
+\newcommand{\reflist}[2]{
+	\subsection*{#1}
+
+	\begin{refsection}[#2]
 		\nocite{*}
 		\printbibliography[heading=none]
 	\end{refsection}
@@ -138,24 +140,14 @@
 					        & \textbf{Other Tools} & \LaTeX, Markdown \\
 	\end{tabularx}
 
-\subsection*{Journal Articles}
+\reflist{Journal Articles}{bib/articles.bib}
 
-	\reflist{bib/articles.bib}
+\reflist{Technical Reports}{bib/tech_reports.bib}
 
-\subsection*{Technical Reports}
+\reflist{Software}{bib/software.bib}
 
-	\reflist{bib/tech_reports.bib}
+\reflist{Invited Workshops}{bib/invited.bib}
 
-\subsection*{Software}
-
-	\reflist{bib/software.bib}
-
-\subsection*{Invited Workshops}
-
-	\reflist{bib/invited.bib}
-
-\subsection*{Presentations and Conference Proceedings}
-
-	\reflist{bib/conferences.bib}
+\reflist{Presentations and Conference Proceedings}{bib/conferences.bib}
 
 \end{document}
