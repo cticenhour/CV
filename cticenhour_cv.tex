@@ -26,6 +26,18 @@
 		\printbibliography[heading=none]
 	\end{refsection}
 }
+
+% Use Biblatex data annotation feature to bold name in each reference list entry
+% See https://tex.stackexchange.com/a/304968
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
 %% END MACROS
 
 \begin{document}
