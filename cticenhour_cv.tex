@@ -6,8 +6,8 @@
 \usepackage{tabularx}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=true,        % false: boxed links; true: colored links
-    urlcolor=black          % color of external links
+    colorlinks=true,		% false: boxed links; true: colored links
+    urlcolor=black			% color of external links
 }
 \usepackage[
 	style=numeric,
@@ -21,7 +21,7 @@
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
 
-% Common section infrastructure
+% Command to generate CV sections, given a heading, tabularx column specifier options, and content
 \newcommand{\cvsection}[3]{
 	\subsection*{#1}
 	\begin{tabularx}{\textwidth}{#2}
@@ -29,7 +29,7 @@
 	\end{tabularx}
 }
 
-% Command to display reference list, given a bib file. 
+% Command to display reference list, given a section heading and a bib file. 
 \newcommand{\reflist}[2]{
 	\subsection*{#1}
 	\begin{refsection}[#2]
@@ -40,11 +40,12 @@
 
 % Use Biblatex data annotation feature to bold name in each reference list entry
 % See https://tex.stackexchange.com/a/304968
+% Modify given name command
 \renewcommand*{\mkbibnamegiven}[1]{%
   \ifitemannotation{highlight}
     {\textbf{#1}}
     {#1}}
-
+% Modify family name/surname command
 \renewcommand*{\mkbibnamefamily}[1]{%
   \ifitemannotation{highlight}
     {\textbf{#1}}
