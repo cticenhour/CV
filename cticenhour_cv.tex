@@ -17,12 +17,21 @@
 ]{biblatex}
 
 %% MACROS 
+% Bullet points
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
+
+% Common section infrastructure
+\newcommand{\cvsection}[3]{
+	\subsection*{#1}
+	\begin{tabularx}{\textwidth}{#2}
+		#3
+	\end{tabularx}
+}
+
 % Command to display reference list, given a bib file. 
 \newcommand{\reflist}[2]{
 	\subsection*{#1}
-
 	\begin{refsection}[#2]
 		\nocite{*}
 		\printbibliography[heading=none]
@@ -48,97 +57,83 @@
 	{\huge \textbf{Casey Icenhour}}
 \end{center}
 
-\subsection*{Contact Information}
-
-\begin{tabularx}{\textwidth}{r l}
+\cvsection{Contact Information}{r l}{
 	\hspace{3em} E-Mail:  & \hspace{2em} cticenho@ncsu.edu \\
 	\hspace{3em} Mobile: & \hspace{2em} 828-612-9256 \\
 	\hspace{3em} GitHub: & \hspace{2em} \url{https://github.com/cticenhour} \\
-\end{tabularx}
+}
 
-\subsection*{Research Interests}
-
-\begin{tabularx}{\textwidth}{l X}
+\cvsection{Research Interests}{l X}{
 	& \hspace{1.5em} Computational Electromagnetics, Industrial Applications of Plasma Physics, Radio-Frequency Plasma, \\
 	& \hspace{1.5em} Advanced Manufacturing, High-Performance Computing, Fusion Energy, Science \& Technology Policy \\
-\end{tabularx}
+}
 
-\subsection*{Research and Professional Experience}
-
-\begin{tabularx}{\textwidth}{l X r}
+\cvsection{Research and Professional Experience}{l X r}{
 	\hspace{2em} & \textbf{Idaho National Laboratory (INL)}, Idaho Falls, ID & \\
-	& \textit{Graduate Fellow, Nuclear Science \& Technology, Advanced Scientific Computing, Computational Frameworks} & \textbf{Jan 2018 - present} \\
-	& \tabitem Member of Multiphysics Object-Oriented Simulation Environment (MOOSE) & \\
-	& \hspace{1.5em} finite element framework development team and Change Control Board & \\
-  & \tabitem MOOSE MacOS platform lead and co-maintainer of conda-based MOOSE & \\
-    & \hspace{1.5em} dependency packages & \\
-	& \tabitem Creator and lead developer of the MOOSE Electromagnetics Module & \\
-	& \tabitem Co-creator and lead of INL advanced manufacturing code MALAMUTE & \\
-	& \tabitem Awarded INL Laboratory Directed Research \& Development funding (in Advanced & \\
-	& \hspace{1.5em} Design \& Manufacturing) as a Co-Investigator: & \\
-	& \hspace{2.5em} S Pitts (PI), D Gaston, N Jerred, C Icenhour, L Aagesen, D Schwen, \textit{Coupling} & \\
-	& \hspace{2.5em} \textit{of Spark Plasma Sintering with Advanced Modeling to Enable Process} & \\
-	& \hspace{2.5em} \textit{Scale-Up}, FY2019 - FY2021 & \\
+			& \textit{Graduate Fellow, Nuclear Science \& Technology, Advanced Scientific Computing, Computational Frameworks} & \textbf{Jan 2018 - present} \\
+			& \tabitem Member of Multiphysics Object-Oriented Simulation Environment (MOOSE) & \\
+			& \hspace{1.5em} finite element framework development team and Change Control Board & \\
+			& \tabitem MOOSE MacOS platform lead and co-maintainer of conda-based MOOSE & \\
+    		& \hspace{1.5em} dependency packages & \\
+			& \tabitem Creator and lead developer of the MOOSE Electromagnetics Module & \\
+			& \tabitem Co-creator and lead of INL advanced manufacturing code MALAMUTE & \\
+			& \tabitem Awarded INL Laboratory Directed Research \& Development funding (in Advanced & \\
+			& \hspace{1.5em} Design \& Manufacturing) as a Co-Investigator: & \\
+			& \hspace{2.5em} S Pitts (PI), D Gaston, N Jerred, C Icenhour, L Aagesen, D Schwen, \textit{Coupling} & \\
+			& \hspace{2.5em} \textit{of Spark Plasma Sintering with Advanced Modeling to Enable Process} & \\
+			& \hspace{2.5em} \textit{Scale-Up}, FY2019 - FY2021 & \\
 	& & \\
 	& \textbf{Oak Ridge National Laboratory (ORNL)}, Oak Ridge, TN & \\
-	& \textit{Graduate Student Intern, Fusion and Materials for Nuclear Systems Division} & \textbf{Jul 2016 - Dec 2017} \\
-	& \tabitem Developed code for simple radio-frequency electromagnetic simulation in support of & \\
-	& \hspace{1.5em} ion cyclotron resonance heating (ICRH) fusion energy research & \\
+			& \textit{Graduate Student Intern, Fusion and Materials for Nuclear Systems Division} & \textbf{Jul 2016 - Dec 2017} \\
+			& \tabitem Developed code for simple radio-frequency electromagnetic simulation in support of & \\
+			& \hspace{1.5em} ion cyclotron resonance heating (ICRH) fusion energy research & \\
 	& & \\
 	& \textbf{North Carolina State University (NCSU), Nuclear Engineering Dept.}, Raleigh, NC & \\
-	& \textit{Graduate Research Assistant, 4th State Applications Research Group} & \textbf{Jul 2013 - Jun 2016} \\
-	& \tabitem Utilized particle-in-cell codes to study capacitively-coupled RF plasma discharges & \\
-	& \textit{Dean's Doctoral Fellow, NCSU College of Engineering} & \textbf{Aug 2012 - Jun 2013} \\
-	& \tabitem Modeled proof-of-concept Z-pinch plasma neutron source for concrete structural & \\
-	& \hspace{1.5em} interrogation using MATLAB & \\
-\end{tabularx}
+			& \textit{Graduate Research Assistant, 4th State Applications Research Group} & \textbf{Jul 2013 - Jun 2016} \\
+			& \tabitem Utilized particle-in-cell codes to study capacitively-coupled RF plasma discharges & \\
+			& \textit{Dean's Doctoral Fellow, NCSU College of Engineering} & \textbf{Aug 2012 - Jun 2013} \\
+			& \tabitem Modeled proof-of-concept Z-pinch plasma neutron source for concrete structural & \\
+			& \hspace{1.5em} interrogation using MATLAB & \\
+}
 
-\subsection*{Education}
+\cvsection{Education}{l X r}{
+	PhD 	& \textbf{North Carolina State University (NCSU)}, Nuclear Engineering & \textbf{2023} \\
+				& \tabitem Concentration in Plasma Physics and Nuclear Fusion & \\
+				& \tabitem Dissertation Title: \textit{Development and Validation of Open Source Software} & \\
+				& \hspace{1.5em} \textit{for Electromagnetics Simulation and Multiphysics Coupling} & \\
+				& \tabitem Advisor: Dr. Steven C. Shannon & \\
+         	& & \\
+	BS		& \textbf{Western Carolina University (WCU)}, Electrical Engineering & \textbf{2012} \\
+				& \tabitem GPA: 4.0 & \\
+				& \tabitem Honors College & \\
+				& \tabitem Concentration in Optics and Communications & \\
+				& \tabitem Minors: Mathematics, Physics & \\
+}
 
-	\begin{tabularx}{\textwidth}{l X r}
-	PhD 	 & \textbf{North Carolina State University (NCSU)}, Nuclear Engineering & \textbf{2012 - 2022} \\
-				 & \tabitem Concentration in Plasma Physics and Nuclear Fusion & \\
-				 & \tabitem Dissertation Title: \textit{Development and Validation of Open Source Software} & \\
-				 & \hspace{1.5em} \textit{for Electromagnetics Simulation and Multiphysics Coupling} & \\
-				 & \tabitem Advisor: Dr. Steven C. Shannon & \\
-         & & \\
-	BS		 & \textbf{Western Carolina University (WCU)}, Electrical Engineering & \textbf{2008 - 2012} \\
-				 & \tabitem GPA: 4.0 & \\
-				 & \tabitem Honors College & \\
-				 & \tabitem Concentration in Optics and Communications & \\
-				 & \tabitem Minors: Mathematics, Physics & \\
-	\end{tabularx}
+\cvsection{Honors and Awards}{l X r}{
+	\hspace{2em} & INL Graduate Fellowship & \textbf{2018 - present} \\
+				 & DOE Office of Science Graduate Student Research Program, ORNL & \textbf{2016 - 2017} \\
+				 & NCSU College of Engineering Dean's Doctoral Fellowship & \textbf{2012 - 2013} \\
+				 & T. Ray and Frances Louise Gibbs Endowed Scholarship, WCU & \textbf{2008 - 2012} \\
+				 & Most Outstanding Upperclassman, WCU Electrical Engineering & \textbf{2011}
+}
 
-\subsection*{Honors and Awards}
-
-	\begin{tabularx}{\textwidth}{l X r}
-		\hspace{2em} & INL Graduate Fellowship & \textbf{2018 - present} \\
-					       & DOE Office of Science Graduate Student Research Program, ORNL & \textbf{2016 - 2017} \\
-					       & NCSU College of Engineering Dean's Doctoral Fellowship & \textbf{2012 - 2013} \\
-					       & T. Ray and Frances Louise Gibbs Endowed Scholarship, WCU & \textbf{2008 - 2012} \\
-					       & Most Outstanding Upperclassman, WCU Electrical Engineering & \textbf{2011}
-	\end{tabularx}
-
-\subsection*{Professional Society Affiliations and Memberships}
-
-\begin{tabularx}{\textwidth}{l l}
+\cvsection{Professional Society Affiliations and Memberships}{l l}{
 	\hspace{2em} & American Physical Society (APS) \\
 				 & Institute for Electrical and Electronics Engineers (IEEE) \\
 				 & Society for Industrial and Applied Mathematics (SIAM)
-\end{tabularx}
+}
 
-\subsection*{Scientific Computing Skills}
-
-	\begin{tabularx}{\textwidth}{l X r}
-		\hspace {2em} & \textbf{Languages} & C++, Python \\
-					        & \textbf{Operating Systems} & Windows, MacOS, Linux (Rocky) \\
-					        & \textbf{Mathematical Computing Environments} & MATLAB, Octave \\
-					        & \textbf{Multiphysics Codes} & MOOSE \\
-					        & \textbf{Version Control} & git \\
-					        & \textbf{Data Visualization} & Paraview, Matplotlib \\
-					        & \textbf{Mesh Generation Tools} & Gmsh \\
-					        & \textbf{Other Tools} & \LaTeX, Markdown \\
-	\end{tabularx}
+\cvsection{Scientific Computing Skills}{l X r}{
+	\hspace{2em} & \textbf{Languages} & C++, Python \\
+				 & \textbf{Operating Systems} & Windows, MacOS, Linux (Rocky) \\
+				 & \textbf{Mathematical Computing Environments} & MATLAB, Octave \\
+				 & \textbf{Multiphysics Codes} & MOOSE \\
+				 & \textbf{Version Control} & git \\
+				 & \textbf{Data Visualization} & Paraview, Matplotlib \\
+				 & \textbf{Mesh Generation Tools} & Gmsh \\
+				 & \textbf{Other Tools} & \LaTeX, Markdown \\
+}
 
 \reflist{Journal Articles}{bib/articles.bib}
 
