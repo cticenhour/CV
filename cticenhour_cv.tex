@@ -16,8 +16,17 @@
 	giveninits=true			% Show only first letter of given name
 ]{biblatex}
 
+%% MACROS 
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
+% Command to display reference list, given a bib file. 
+\newcommand{\reflist}[1]{
+	\begin{refsection}[#1]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
+}
+%% END MACROS
 
 \begin{document}
 
@@ -119,37 +128,22 @@
 
 \subsection*{Journal Articles}
 
-	\begin{refsection}[bib/articles.bib]
-		\nocite{*}
-		\printbibliography[heading=none]
-	\end{refsection}
+	\reflist{bib/articles.bib}
 
 \subsection*{Technical Reports}
 
-	\begin{refsection}[bib/tech_reports.bib]
-		\nocite{*}
-		\printbibliography[heading=none]
-	\end{refsection}
+	\reflist{bib/tech_reports.bib}
 
 \subsection*{Software}
 
-	\begin{refsection}[bib/software.bib]
-		\nocite{*}
-		\printbibliography[heading=none]
-	\end{refsection}
+	\reflist{bib/software.bib}
 
 \subsection*{Invited Workshops}
 
-	\begin{refsection}[bib/invited.bib]
-		\nocite{*}
-		\printbibliography[heading=none]
-	\end{refsection}
+	\reflist{bib/invited.bib}
 
 \subsection*{Presentations and Conference Proceedings}
 
-	\begin{refsection}[bib/conferences.bib]
-		\nocite{*}
-		\printbibliography[heading=none]
-	\end{refsection}
+	\reflist{bib/conferences.bib}
 
 \end{document}
