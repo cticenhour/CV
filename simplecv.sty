@@ -1,0 +1,53 @@
+\ProvidesPackage{simplecv}[2022/12/04 v1.0 Simple cv style]
+
+% Required sub-packages
+\RequirePackage[margin=0.5in]{geometry}
+\RequirePackage{tabularx}
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true,        % false: boxed links; true: colored links
+    urlcolor=black          % color of external links
+}
+\RequirePackage[
+	style=numeric,			% Bibliography entry style
+	sorting=ydnt,			% Sort by year first (then name, then title) in descending order
+	maxnames=99,			% Max number of names displayed
+	giveninits=true			% Show only first letter of given name
+]{biblatex}
+
+% Remove page numbers
+\pagenumbering{gobble}
+
+% Bullet points
+\newcommand{\tabitem}{~~\textbullet~~}
+\newcommand{\tabitemii}{~~$\circ$~~}
+
+% Command to generate CV sections, given a heading, tabularx column specifier options, and content
+\newcommand{\cvsection}[3]{
+	\subsection*{#1}
+	\begin{tabularx}{\textwidth}{#2}
+		#3
+	\end{tabularx}
+}
+
+% Command to display reference list, given a section heading and a bib file.
+\newcommand{\reflist}[2]{
+	\subsection*{#1}
+	\begin{refsection}[#2]
+		\nocite{*}
+		\printbibliography[heading=none]
+	\end{refsection}
+}
+
+% Use Biblatex data annotation feature to bold name in each reference list entry
+% See https://tex.stackexchange.com/a/304968
+% Modify given name command
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+% Modify family name/surname command
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}

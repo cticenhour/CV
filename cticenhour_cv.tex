@@ -1,56 +1,6 @@
 \documentclass{article}
 
-\pagenumbering{gobble}
-
-\usepackage[margin=0.5in]{geometry}
-\usepackage{tabularx}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,        % false: boxed links; true: colored links
-    urlcolor=black          % color of external links
-}
-\usepackage[
-	style=numeric,
-	sorting=ydnt,			% sort by year first (then name, then title) in descending order
-	maxnames=37,			% Max number of names displayed (MOOSE 2.0 paper --> 37 authors)
-	giveninits=true			% Show only first letter of given name
-]{biblatex}
-
-%% MACROS 
-% Bullet points
-\newcommand{\tabitem}{~~\textbullet~~}
-\newcommand{\tabitemii}{~~$\circ$~~}
-
-% Command to generate CV sections, given a heading, tabularx column specifier options, and content
-\newcommand{\cvsection}[3]{
-	\subsection*{#1}
-	\begin{tabularx}{\textwidth}{#2}
-		#3
-	\end{tabularx}
-}
-
-% Command to display reference list, given a section heading and a bib file. 
-\newcommand{\reflist}[2]{
-	\subsection*{#1}
-	\begin{refsection}[#2]
-		\nocite{*}
-		\printbibliography[heading=none]
-	\end{refsection}
-}
-
-% Use Biblatex data annotation feature to bold name in each reference list entry
-% See https://tex.stackexchange.com/a/304968
-% Modify given name command
-\renewcommand*{\mkbibnamegiven}[1]{%
-  \ifitemannotation{highlight}
-    {\textbf{#1}}
-    {#1}}
-% Modify family name/surname command
-\renewcommand*{\mkbibnamefamily}[1]{%
-  \ifitemannotation{highlight}
-    {\textbf{#1}}
-    {#1}}
-%% END MACROS
+\usepackage{simplecv}
 
 \begin{document}
 
