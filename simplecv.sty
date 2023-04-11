@@ -42,6 +42,11 @@
 
 % Use Biblatex data annotation feature to bold name in each reference list entry
 % See https://tex.stackexchange.com/a/304968
+% KEY:
+%	- highlight = make name bold
+%	- pi = signify PI on grant by adding a double-asterisk (**) after the last name
+%	- highlightpi = performs the actions of "highlight" and "pi" at the same time
+%
 % Modify given name command
 \renewcommand*{\mkbibnamegiven}[1]{%
   \ifitemannotation{highlight}{\textbf{#1}}
