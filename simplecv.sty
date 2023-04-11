@@ -1,5 +1,5 @@
 % Created by Casey Icenhour (GitHub: @cticenhour)
-\ProvidesPackage{simplecv}[2022/12/04 v1.0 Simple cv style]
+\ProvidesPackage{simplecv}[2023/04/11 v1.1 Simple cv style]
 
 % Required sub-packages
 \RequirePackage[margin=0.5in]{geometry}
@@ -44,11 +44,11 @@
 % See https://tex.stackexchange.com/a/304968
 % Modify given name command
 \renewcommand*{\mkbibnamegiven}[1]{%
-  \ifitemannotation{highlight}
-    {\textbf{#1}}
-    {#1}}
+  \ifitemannotation{highlight}{\textbf{#1}}
+  	{\ifitemannotation{pi}{#1}
+	  {\ifitemannotation{highlightpi}{\textbf{#1}}{#1}}}}
 % Modify family name/surname command
 \renewcommand*{\mkbibnamefamily}[1]{%
-  \ifitemannotation{highlight}
-    {\textbf{#1}}
-    {#1}}
+  \ifitemannotation{highlight}{\textbf{#1}}
+    {\ifitemannotation{pi}{#1**}
+	  {\ifitemannotation{highlightpi}{\textbf{#1}**}{#1}}}}
