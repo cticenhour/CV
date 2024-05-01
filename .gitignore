@@ -12,3 +12,8 @@
 *.bcf
 *.blg
 *.run.xml
+
+# MacOS-generated files #
+#########################
+
+.DS_Store
