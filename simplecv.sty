@@ -1,5 +1,5 @@
 % Created by Casey Icenhour (GitHub: @cticenhour)
-\ProvidesPackage{simplecv}[2023/04/11 v1.1 Simple cv style]
+\ProvidesPackage{simplecv}[2026/03/02 v1.2 Simple cv style]
 
 % Required sub-packages
 \RequirePackage[margin=0.5in, footskip=0.1in]{geometry}
@@ -44,6 +44,25 @@
 \newcommand{\cvtwocol}[2]{\cvsection{#1}{l X}{#2}}
 \newcommand{\cvthreecol}[2]{\cvsection{#1}{l X r}{#2}}
 \newcommand{\cvcontact}[2]{\cvsection{#1}{r l}{#2}}
+
+% Structured entry header for a position or institution.
+% Args: #1 = institution/employer, #2 = role/degree, #3 = date range
+\newcommand{\cventry}[3]{%
+	& \textbf{#1} & \\
+	& \textit{#2} & \textbf{#3} \\
+}
+
+% Entry header for a subsequent role at the same institution (omits institution name).
+% Args: #1 = role/degree, #2 = date range
+\newcommand{\cventrysub}[2]{%
+	& \textit{#1} & \textbf{#2} \\
+}
+
+% Bullet point row, hiding raw table column syntax from content.
+% Use \cvbullet for a standard bullet and \cvbulletcont for a
+% continuation line when a bullet wraps to a second line.
+\newcommand{\cvbullet}[1]{& \tabitem #1 & \\}
+\newcommand{\cvbulletcont}[1]{& \coliii #1 & \\}
 
 % Command to display reference list, given a section heading and a bib file.
 \newcommand{\reflist}[2]{
