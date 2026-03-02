@@ -19,6 +19,15 @@
 % Remove page numbers
 %\pagenumbering{gobble}
 
+% Indent padding
+\newcommand{\coli}{\hspace{3em}}  % left column indent
+\newcommand{\colii}{\hspace{2em}} % right column indent
+\newcommand{\coliii}{\hspace{1.5em}} % second line indent
+\newcommand{\coliv}{\hspace{1em}} % second line indent - alt
+
+% Vertical space consistency
+\newcommand{\cvsep}{& & \\}  % for three-col sections
+
 % Bullet points
 \newcommand{\tabitem}{~~\textbullet~~}
 \newcommand{\tabitemii}{~~$\circ$~~}
@@ -30,6 +39,11 @@
 		#3
 	\end{tabularx}
 }
+
+% Shorthands of cvsection for different distinct sections
+\newcommand{\cvtwocol}[2]{\cvsection{#1}{l X}{#2}}
+\newcommand{\cvthreecol}[2]{\cvsection{#1}{l X r}{#2}}
+\newcommand{\cvcontact}[2]{\cvsection{#1}{r l}{#2}}
 
 % Command to display reference list, given a section heading and a bib file.
 \newcommand{\reflist}[2]{
