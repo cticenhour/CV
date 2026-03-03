@@ -62,7 +62,11 @@
 % Use \cvbullet for a standard bullet and \cvbulletcont for a
 % continuation line when a bullet wraps to a second line.
 \newcommand{\cvbullet}[1]{& \tabitem #1 & \\}
-\newcommand{\cvbulletcont}[1]{& \coliii #1 & \\}
+\newcommand{\cvbulletcont}[1]{& \colii #1 & \\}
+
+% Shorthands for communication
+% Args: #1 = entry label, #2 = entry definition
+\newcommand{\cvcontactentry}[2]{\coli #1: & \colii #2 \\}
 
 % Command to display reference list, given a section heading and a bib file.
 \newcommand{\reflist}[2]{
