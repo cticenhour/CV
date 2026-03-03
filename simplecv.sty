@@ -1,5 +1,5 @@
 % Created by Casey Icenhour (GitHub: @cticenhour)
-\ProvidesPackage{simplecv}[2026/03/02 v2.0 Simple cv style]
+\ProvidesPackage{simplecv}[2026/03/03 v2.1 Simple cv style]
 
 % Required sub-packages
 \RequirePackage[margin=0.5in, footskip=0.1in]{geometry}
@@ -15,6 +15,7 @@
 	maxnames=99,				% Max number of names displayed
 	giveninits=true			% Show only first letter of given name
 ]{biblatex}
+\RequirePackage{xparse}
 
 % Remove page numbers
 %\pagenumbering{gobble}
@@ -54,6 +55,18 @@
 \newcommand{\skills}[2]{\cvsection{#1}{@{\coliii} l >{\raggedleft\arraybackslash}X}{#2}}
 \newcommand{\cvcontact}[2]{\cvsection{#1}{r X}{#2}}
 
+% Internal helper: renders a bullet list if the argument is non-empty.
+% Args: #1 = one or more \item lines (or empty)
+\newcommand{\@cvmaybebullets}[1]{%
+	\ifx\relax#1\relax\else
+		\begin{itemize}
+			\setlength{\itemsep}{0pt}
+			\setlength{\parsep}{0pt}
+			#1
+		\end{itemize}
+	\fi
+}
+
 % Section command for experience-style items, where bullets follow each
 % item header as a proper list rather than table rows.
 % Args: #1 = section heading
@@ -69,25 +82,31 @@
 }
 
 % Structured item header for a position or institution, for use inside \cventries.
-% Emits a self-contained tabularx for the institution/role/date header rows.
+% Emits a self-contained tabularx for the institution/role/date header rows,
+% followed by an optional bulleted list.
 % Args: #1 = institution/employer, #2 = role/degree, #3 = date range
-\newcommand{\cvitem}[3]{%
+%       #4 (optional) = bullet items (\item ...)
+\NewDocumentCommand{\cvitem}{ m m m O{} }{%
 	\item[]
 	\begin{tabularx}{\linewidth}{X r}
 		\textbf{#1} & \\
 		\textit{#2} & \textbf{#3} \\
 	\end{tabularx}
+	\@cvmaybebullets{#4}%
 }
 
 % Entry header for an educational institution, for use inside \cventries.
-% Writes out the full degree name in italics rather than an abbreviation column.
+% Writes out the full degree name in italics rather than an abbreviation column,
+% followed by an optional bulleted list.
 % Args: #1 = institution and field, #2 = full degree name, #3 = year
-\newcommand{\cveduitem}[3]{%
+%       #4 (optional) = bullet items (\item ...)
+\NewDocumentCommand{\cveduitem}{ m m m O{} }{%
 	\item[]
 	\begin{tabularx}{\linewidth}{X r}
 		\textbf{#1} & \\
 		\textit{#2} & \textbf{#3} \\
 	\end{tabularx}
+	\@cvmaybebullets{#4}%
 }
 
 % Structured item header for an award, for use inside \cventries.
@@ -111,24 +130,16 @@
 % Contacts entries
 \newcommand{\cvcontactitem}[2]{\coliii #1: & \colii #2 \\}
 
-% Item header for a subsequent role at the same institution (omits institution name).
+% Item header for a subsequent role at the same institution (omits institution name),
+% followed by an optional bullet list.
 % Args: #1 = role/degree, #2 = date range
-\newcommand{\cvitemsub}[2]{%
+%       #3 (optional) = bullet items (\item ...)
+\NewDocumentCommand{\cvitemsub}{ m m O{} }{%
 	\item[]
 	\begin{tabularx}{\linewidth}{X r}
 		\textit{#1} & \textbf{#2} \\
 	\end{tabularx}
-}
-
-% Bullet list for use inside \cventries. Wrapping and indentation are handled
-% automatically by the list environment; \cvbulletcont is no longer needed.
-% Args: #1 = one or more \item lines
-\newcommand{\cvbullets}[1]{%
-	\begin{itemize}
-		\setlength{\itemsep}{0pt}
-		\setlength{\parsep}{0pt}
-		#1
-	\end{itemize}
+	\@cvmaybebullets{#3}%
 }
 
 % Command to display reference list, given a section heading and a bib file.
