@@ -3,11 +3,16 @@ AUX=$(NAME).aux $(NAME).out
 INTERMEDIATES=$(NAME).log
 BIB=$(NAME).bbl $(NAME).bcf $(NAME).blg $(NAME).run.xml
 PDF=$(NAME).pdf
+SRCS=$(NAME).tex simplecv.sty $(wildcard bib/*.bib)
 
-$(NAME).pdf : $(NAME).tex
+.PHONY: clean
+
+$(PDF) : $(SRCS)
+	pdflatex $(NAME)
 	pdflatex $(NAME)
 	biber $(NAME)
 	pdflatex $(NAME)
+	pdflatex $(NAME)
 
 clean :
-	rm $(AUX) $(INTERMEDIATES) $(BIB) $(PDF)
+	$(RM) $(AUX) $(INTERMEDIATES) $(BIB) $(PDF)
