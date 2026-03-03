@@ -1,5 +1,5 @@
 % Created by Casey Icenhour (GitHub: @cticenhour)
-\ProvidesPackage{simplecv}[2026/03/02 v1.2 Simple cv style]
+\ProvidesPackage{simplecv}[2026/03/02 v2.0 Simple cv style]
 
 % Required sub-packages
 \RequirePackage[margin=0.5in, footskip=0.1in]{geometry}
@@ -89,6 +89,21 @@
 		\textit{#2} & \textbf{#3} \\
 	\end{tabularx}
 }
+
+% Structured entry header for an award, for use inside \cventries.
+% Emits a self-contained tabularx for the award/date header rows.
+% Args: #1 = award name, #2 = date range
+\newcommand{\cvawardentry}[2]{%
+	\item[]
+	\begin{tabularx}{\linewidth}{X r}
+		#1 & \textbf{#2} \\
+	\end{tabularx}
+}
+
+% Special case of \cvawardentry, used for memberships.
+% Emits a self-contained tabularx for the membership rows.
+% Args: #1 = membership name
+\newcommand{\cvmemberentry}[1]{\cvawardentry{#1}{}}
 
 % Skills entries
 \newcommand{\cvskillsentry}[2]{\textbf{#1} & #2 \\}
