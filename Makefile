@@ -1,4 +1,4 @@
-NAME=cticenhour_cv
+NAME=main
 AUX=$(NAME).aux $(NAME).out
 INTERMEDIATES=$(NAME).log
 BIB=$(NAME).bbl $(NAME).bcf $(NAME).blg $(NAME).run.xml
