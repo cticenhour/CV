@@ -12,3 +12,4 @@ watch :
 
 clean :
 	latexmk -C
+	$(RM) $(NAME).bbl
