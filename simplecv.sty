@@ -20,7 +20,7 @@
 %\pagenumbering{gobble}
 
 % Name heading
-\newcommand{\cvname}[1]{%
+\newcommand{\name}[1]{%
 	\begin{center}
 		{\huge \textbf{#1}}
 	\end{center}
@@ -51,13 +51,13 @@
 
 % Shorthands of cvsection for different distinct sections
 \newcommand{\cvtwocol}[2]{\cvsection{#1}{l X}{#2}}
-\newcommand{\cvskills}[2]{\cvsection{#1}{@{\coliii} l >{\raggedleft\arraybackslash}X}{#2}}
+\newcommand{\skills}[2]{\cvsection{#1}{@{\coliii} l >{\raggedleft\arraybackslash}X}{#2}}
 \newcommand{\cvcontact}[2]{\cvsection{#1}{r X}{#2}}
 
-% Section command for experience-style entries, where bullets follow each
-% entry header as a proper list rather than table rows.
+% Section command for experience-style items, where bullets follow each
+% item header as a proper list rather than table rows.
 % Args: #1 = section heading
-\newcommand{\cventries}[2]{
+\newcommand{\cvitems}[2]{
 	\subsection*{#1}
 	\begin{list}{}{%
 		\setlength{\leftmargin}{2em}
@@ -68,10 +68,10 @@
 	\end{list}
 }
 
-% Structured entry header for a position or institution, for use inside \cventries.
+% Structured item header for a position or institution, for use inside \cventries.
 % Emits a self-contained tabularx for the institution/role/date header rows.
 % Args: #1 = institution/employer, #2 = role/degree, #3 = date range
-\newcommand{\cventry}[3]{%
+\newcommand{\cvitem}[3]{%
 	\item[]
 	\begin{tabularx}{\linewidth}{X r}
 		\textbf{#1} & \\
@@ -82,7 +82,7 @@
 % Entry header for an educational institution, for use inside \cventries.
 % Writes out the full degree name in italics rather than an abbreviation column.
 % Args: #1 = institution and field, #2 = full degree name, #3 = year
-\newcommand{\cveduentry}[3]{%
+\newcommand{\cveduitem}[3]{%
 	\item[]
 	\begin{tabularx}{\linewidth}{X r}
 		\textbf{#1} & \\
@@ -90,30 +90,30 @@
 	\end{tabularx}
 }
 
-% Structured entry header for an award, for use inside \cventries.
+% Structured item header for an award, for use inside \cventries.
 % Emits a self-contained tabularx for the award/date header rows.
 % Args: #1 = award name, #2 = date range
-\newcommand{\cvawardentry}[2]{%
+\newcommand{\awarditem}[2]{%
 	\item[]
 	\begin{tabularx}{\linewidth}{X r}
 		#1 & \textbf{#2} \\
 	\end{tabularx}
 }
 
-% Special case of \cvawardentry, used for memberships.
+% Special case of \awarditem, used for memberships.
 % Emits a self-contained tabularx for the membership rows.
 % Args: #1 = membership name
-\newcommand{\cvmemberentry}[1]{\cvawardentry{#1}{}}
+\newcommand{\memberitem}[1]{\awarditem{#1}{}}
 
 % Skills entries
-\newcommand{\cvskillsentry}[2]{\textbf{#1} & #2 \\}
+\newcommand{\skillsitem}[2]{\textbf{#1} & #2 \\}
 
 % Contacts entries
-\newcommand{\cvcontactentry}[2]{\coliii #1: & \colii #2 \\}
+\newcommand{\cvcontactitem}[2]{\coliii #1: & \colii #2 \\}
 
-% Entry header for a subsequent role at the same institution (omits institution name).
+% Item header for a subsequent role at the same institution (omits institution name).
 % Args: #1 = role/degree, #2 = date range
-\newcommand{\cventrysub}[2]{%
+\newcommand{\cvitemsub}[2]{%
 	\item[]
 	\begin{tabularx}{\linewidth}{X r}
 		\textit{#1} & \textbf{#2} \\

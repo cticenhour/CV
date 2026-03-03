@@ -2,64 +2,20 @@
 
 \usepackage{simplecv}
 
-%--- Content macros ---
-
-\newcommand{\inlcontent}{
-	\cventry{Idaho National Laboratory (INL), Idaho Falls, ID}
-					{Computational Scientist, Computational Frameworks Department}
-					{May 2023--present}
-	\cvbullets{
-		\item Core Developer, Multiphysics Object-Oriented Simulation Environment (MOOSE)
-		\item Lead, MOOSE Software Quality Assurance (SQA) and Nuclear Quality Assurance, \\
-					Level 1 (NQA-1) compliance
-		\item Digital Twin Orchestration Lead, SMART USA Digital Backbone
-		\item Lead, Tritium Migration Analysis Program, Version 8 (TMAP8) SQA
-		\item MOOSE MacOS platform lead and co-maintainer of conda-based MOOSE dependency \\
-					packages
-		\item Subject matter expert, computational electromagnetics and plasma physics
-	}
-		\cventrysub{Graduate Fellow, Computational Frameworks Department}
-							 {Jan 2018--May 2023}
-		\cvbullets{
-			\item Creator and lead developer of the MOOSE Electromagnetics Module
-			\item Co-creator and maintainer of INL advanced manufacturing code MALAMUTE
-		}
-}
-
-\newcommand{\ornlcontent}{
-	\cventry{Oak Ridge National Laboratory (ORNL), Oak Ridge, TN}
-					{Graduate Student Intern, Fusion and Materials for Nuclear Systems Division}
-					{Jul 2016--Dec 2017}
-	\cvbullets{
-		\item Developed code for simple radio-frequency electromagnetic simulation in support of ion \\
-					cyclotron resonance heating (ICRH) fusion energy research
-	}
-}
-
-\newcommand{\ncsucontent}{
-	\cventry{North Carolina State University (NCSU), Nuclear Engr. Dept., Raleigh, NC}
-			{Graduate Research Assistant, 4th State Applications Research Group}{Jul 2013--Jun 2016}
-	\cvbullets{
-		\item Utilized particle-in-cell codes to study capacitively-coupled RF plasma discharges
-	}
-		\cventrysub{Dean's Doctoral Fellow, NCSU College of Engineering}{Aug 2012--Jun 2013}
-		\cvbullets{
-			\item Modeled proof-of-concept Z-pinch plasma neutron source for concrete structural \\
-						interrogation using MATLAB
-		}
-}
+% Include external content
+\include{experience.tex}
 
 \begin{document}
 
-\cvname{Casey Icenhour}
+\name{Casey Icenhour}
 
 %--- Contact Information ---
 
 \cvcontact{Contact Information}{
-	\cvcontactentry{E-Mail}{casey.icenhour@inl.gov}
-	\cvcontactentry{Mobile}{828-612-9256}
-	\cvcontactentry{GitHub}{\url{https://github.com/cticenhour}}
-	\cvcontactentry{LinkedIn}{\url{https://www.linkedin.com/in/caseyicenhour/}}
+	\cvcontactitem{E-Mail}{casey.icenhour@inl.gov}
+	\cvcontactitem{Mobile}{828-612-9256}
+	\cvcontactitem{GitHub}{\url{https://github.com/cticenhour}}
+	\cvcontactitem{LinkedIn}{\url{https://www.linkedin.com/in/caseyicenhour/}}
 }
 
 %--- Research Interests ---
@@ -72,21 +28,25 @@
 
 %--- Experience and Education ---
 
-\cventries{Research and Professional Experience}{
+\cvitems{Research and Professional Experience}{
 	\inlcontent
 	\ornlcontent
 	\ncsucontent
 }
 
-\cventries{Education}{
-	\cveduentry{North Carolina State University (NCSU), Nuclear Engineering}{Doctor of Philosophy (PhD)}{2023}
+\cvitems{Education}{
+	\cveduitem{North Carolina State University (NCSU), Nuclear Engineering}
+						 {Doctor of Philosophy (PhD)}
+						 {2023}
 	\cvbullets{
 		\item Concentration in Plasma Physics and Nuclear Fusion
 		\item Dissertation Title: \textit{Development and Validation of Open Source Software for \\
 					Electromagnetics Simulation and Multiphysics Coupling} (\href{https://www.lib.ncsu.edu/resolver/1840.20/40985}{\textbf{Link}})
 		\item Advisor: Dr. Steven C. Shannon
 	}
-	\cveduentry{Western Carolina University (WCU), Electrical Engineering}{Bachelor of Science (BS)}{2012}
+	\cveduitem{Western Carolina University (WCU), Electrical Engineering}
+						 {Bachelor of Science (BS)}
+						 {2012}
 	\cvbullets{
 		\item GPA: 4.0
 		\item Honors College
@@ -97,46 +57,61 @@
 
 %--- Skills and Awards ---
 
-\cvskills{Scientific Computing Skills}{
-	\cvskillsentry{Languages}{C++, Python}
-	\cvskillsentry{Operating Systems}{Windows, MacOS, Linux (Ubuntu, Rocky, Fedora)}
-	\cvskillsentry{Mathematical Computing Environments}{MATLAB, Octave}
-	\cvskillsentry{Multiphysics Codes}{MOOSE}
-	\cvskillsentry{Version Control}{git}
-	\cvskillsentry{Data Visualization}{Paraview, Matplotlib}
-	\cvskillsentry{Mesh Generation Tools}{Gmsh}
-	\cvskillsentry{Other Tools}{\LaTeX}
+\skills{Scientific Computing Skills}{
+	\skillsitem{Languages}{C++, Python}
+	\skillsitem{Operating Systems}{Windows, MacOS, Linux (Ubuntu, Rocky, Fedora)}
+	\skillsitem{Mathematical Computing Environments}{MATLAB, Octave}
+	\skillsitem{Multiphysics Codes}{MOOSE}
+	\skillsitem{Version Control}{git}
+	\skillsitem{Data Visualization}{Paraview, Matplotlib}
+	\skillsitem{Mesh Generation Tools}{Gmsh}
+	\skillsitem{Other Tools}{\LaTeX}
 }
 
-\cventries{Honors and Awards}{
-	\cvawardentry{INL Innovation Celebration Award for Open Source Software}{2021, 2023}
-	\cvawardentry{INL Graduate Fellowship}{2018--2023}
-	\cvawardentry{DOE Office of Science Graduate Student Research Program, ORNL}{2016--2017}
-	\cvawardentry{NCSU College of Engineering Dean's Doctoral Fellowship}{2012--2013}
-	\cvawardentry{T. Ray and Frances Louise Gibbs Endowed Scholarship, WCU}{2008--2012}
-	\cvawardentry{Most Outstanding Upperclassman, WCU Electrical Engineering}{2011}
+\cvitems{Honors and Awards}{
+	\awarditem{INL Innovation Celebration Award for Open Source Software}{2021, 2023}
+	\awarditem{INL Graduate Fellowship}{2018--2023}
+	\awarditem{DOE Office of Science Graduate Student Research Program, ORNL}{2016--2017}
+	\awarditem{NCSU College of Engineering Dean's Doctoral Fellowship}{2012--2013}
+	\awarditem{T. Ray and Frances Louise Gibbs Endowed Scholarship, WCU}{2008--2012}
+	\awarditem{Most Outstanding Upperclassman, WCU Electrical Engineering}{2011}
 }
 
 %--- Affiliations and Service ---
 
-\cventries{Professional Society Affiliations and Memberships}{
-	\cvmemberentry{Member, American Nuclear Society}{}
-	\cvmemberentry{Member, United States Research Software Engineering Association}{}
-	\cvmemberentry{Past Member, American Physical Society}{}
-	\cvmemberentry{Past Member, Institute for Electrical and Electronics Engineers}{}
-	\cvmemberentry{Past Member, Society for Industrial and Applied Mathematics}{}
+\cvitems{Professional Society Affiliations and Memberships}{
+	\memberitem{Member, American Nuclear Society}{}
+	\memberitem{Member, United States Research Software Engineering Association}{}
+	\memberitem{Past Member, American Physical Society}{}
+	\memberitem{Past Member, Institute for Electrical and Electronics Engineers}{}
+	\memberitem{Past Member, Society for Industrial and Applied Mathematics}{}
 }
 
-\cventries{Professional Service}{
-	\cventry{American Nuclear Society}{Executive Committee Member, Fusion Energy Division}{June 2025--present}
-	\cventry{MOOSE International Workshop}{Session Chair, Fusion Energy}{2025}
-	\cventry{INL Laboratory Directed Research \& Development (LDRD) Program}{Member, Enabling Future Fusion Energy Systems Proposal Review Committee}{2025}
-		\cventrysub{Member, Interlaboratory LDRD Review Committee (Fusion Systems)}{2025}
-	\cventry{INL Early Career Researchers Association}{Chair}{Oct 2025--present}
-		\cventrysub{Vice-Chair \& Chair-elect}{Oct 2024--Sept 2025}
-		\cventrysub{Professional Development Officer}{Oct 2023--Sept 2024}
-	\cventry{United States Department of Energy, Office of Science}{Reviewer, Small Business Innovation Research/Small Business Technology Transfer \newline (SBIR/STTR) Program (Fusion Energy Sciences)}{2023, 2025}
-	\cventry{Journal of Open Source Software}{Reviewer (Computer Science, Information Science, and Mathematics)}{2022}
+\cvitems{Professional Service}{
+	\cvitem{American Nuclear Society}
+					{Executive Committee Member, Fusion Energy Division}
+					{June 2025--present}
+	\cvitem{MOOSE International Workshop}
+					{Session Chair, Fusion Energy}
+					{2025}
+	\cvitem{INL Laboratory Directed Research \& Development (LDRD) Program}
+					{Member, Enabling Future Fusion Energy Systems Proposal Review Committee}
+					{2025}
+		\cvitemsub{Member, Interlaboratory LDRD Review Committee (Fusion Systems)}
+							 {2025}
+	\cvitem{INL Early Career Researchers Association}
+					{Chair}
+					{Oct 2025--present}
+		\cvitemsub{Vice-Chair \& Chair-elect}
+							 {Oct 2024--Sept 2025}
+		\cvitemsub{Professional Development Officer}
+							 {Oct 2023--Sept 2024}
+	\cvitem{United States Department of Energy, Office of Science}
+					{Reviewer, Small Business Innovation Research/Small Business Technology Transfer \newline (SBIR/STTR) Program (Fusion Energy Sciences)}
+					{2023, 2025}
+	\cvitem{Journal of Open Source Software}
+					{Reviewer (Computer Science, Information Science, and Mathematics)}
+					{2022}
 }
 
 %--- Personal Bibliographical References ---
