@@ -19,11 +19,27 @@
 % Remove page numbers
 %\pagenumbering{gobble}
 
+% Name heading
+\newcommand{\cvname}[1]{%
+	\begin{center}
+		{\huge \textbf{#1}}
+	\end{center}
+}
+
 % Indent padding
-\newcommand{\coli}{\hspace{3em}}  % left column indent
-\newcommand{\colii}{\hspace{2em}} % right column indent
-\newcommand{\coliii}{\hspace{1.5em}} % second line indent
-\newcommand{\coliv}{\hspace{1em}} % second line indent - alt
+\newcommand{\coli}{\hspace{1em}}
+\newcommand{\colii}{\hspace{2em}}
+\newcommand{\coliii}{\hspace{3em}}
+
+% Section command for a single paragraph of text, e.g. Research Interests.
+% Args: #1 = section heading, #2 = paragraph text
+\newcommand{\cvparagraph}[2]{%
+	\subsection*{#1}
+	\begingroup
+		\leftskip=2.5em
+		#2\par
+	\endgroup
+}
 
 % Command to generate CV sections, given a heading, tabularx column specifier options, and content
 \newcommand{\cvsection}[3]{
@@ -35,6 +51,7 @@
 
 % Shorthands of cvsection for different distinct sections
 \newcommand{\cvtwocol}[2]{\cvsection{#1}{l X}{#2}}
+\newcommand{\cvskills}[2]{\cvsection{#1}{@{\coliii} l >{\raggedleft\arraybackslash}X}{#2}}
 \newcommand{\cvcontact}[2]{\cvsection{#1}{r X}{#2}}
 
 % Section command for experience-style entries, where bullets follow each
@@ -72,6 +89,14 @@
 		\textit{#2} & \textbf{#3} \\
 	\end{tabularx}
 }
+
+% Skills entries
+\newcommand{\cvskillsentry}[2]{\textbf{#1} & #2 \\}
+
+% Contacts entries
+\newcommand{\cvcontactentry}[2]{\coliii #1: & \colii #2 \\}
+
+% Entry header for a subsequent role at the same institution (omits institution name).
 % Args: #1 = role/degree, #2 = date range
 \newcommand{\cventrysub}[2]{%
 	\item[]
