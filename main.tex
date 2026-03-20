@@ -3,6 +3,7 @@
 \usepackage{simplecv}
 
 % Include external content
+\include{education.tex}
 \include{experience.tex}
 
 \begin{document}
@@ -35,24 +36,8 @@
 }
 
 \cvitems{Education}{
-	\cveduitem{North Carolina State University (NCSU), Nuclear Engineering}
-						{Doctor of Philosophy (PhD)}
-						{2023}
-	[
-		\item Concentration in Plasma Physics and Nuclear Fusion
-		\item Dissertation Title: \textit{Development and Validation of Open Source Software for \\
-					Electromagnetics Simulation and Multiphysics Coupling} (\href{https://www.lib.ncsu.edu/resolver/1840.20/40985}{\textbf{Link}})
-		\item Advisor: Dr. Steven C. Shannon
-	]
-	\cveduitem{Western Carolina University (WCU), Electrical Engineering}
-						{Bachelor of Science (BS)}
-						{2012}
-	[
-		\item GPA: 4.0
-		\item Honors College
-		\item Concentration in Optics and Communications
-		\item Minors: Mathematics, Physics
-	]
+	\ncsueducontent
+	\wcueducontent
 }
 
 %--- Skills and Awards ---
@@ -62,14 +47,14 @@
 	\skillsitem{Operating Systems}{Windows, MacOS, Linux (Ubuntu, Rocky, Fedora)}
 	\skillsitem{Mathematical Computing Environments}{MATLAB, Octave}
 	\skillsitem{Multiphysics Codes}{MOOSE}
-	\skillsitem{Version Control}{git}
+	\skillsitem{Version Control and Continuous Integration}{git, CIVET, GitHub Actions}
 	\skillsitem{Data Visualization}{Paraview, Matplotlib}
-	\skillsitem{Mesh Generation Tools}{Gmsh}
+	\skillsitem{Mesh Generation Tools}{Gmsh, Cubit}
 	\skillsitem{Other Tools}{\LaTeX}
 }
 
 \cvitems{Honors and Awards}{
-	\awarditem{INL Innovation Celebration Award for Open Source Software}{2021, 2023}
+	\awarditem{INL Innovation Celebration Award for Open Source Software}{2021, 2023, 2026}
 	\awarditem{INL Graduate Fellowship}{2018--2023}
 	\awarditem{DOE Office of Science Graduate Student Research Program, ORNL}{2016--2017}
 	\awarditem{NCSU College of Engineering Dean's Doctoral Fellowship}{2012--2013}
@@ -96,7 +81,7 @@
 				 {2025}
 	\cvitem{INL Laboratory Directed Research \& Development (LDRD) Program}
 				 {Member, Enabling Future Fusion Energy Systems Proposal Review Committee}
-				 {2025}
+				 {2025--present}
 		\cvitemsub{Member, Interlaboratory LDRD Review Committee (Fusion Systems)}
 							{2025}
 	\cvitem{INL Early Career Researchers Association}
