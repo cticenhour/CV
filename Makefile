@@ -1,6 +1,6 @@
 NAME=main
 PDF=$(NAME).pdf
-SRCS=$(NAME).tex simplecv.sty $(wildcard bib/*.bib)
+SRCS=$(wildcard *.tex) simplecv.sty $(wildcard bib/*.bib)
 
 .PHONY: clean watch
 
